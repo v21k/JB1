@@ -17,7 +17,6 @@ public class AdditionalTask3 {
             counter = (number % 10 == 8) ? counter + 1 : counter;
             number = number / 10;
         }
-
         System.out.println(counter);
     }
 }
