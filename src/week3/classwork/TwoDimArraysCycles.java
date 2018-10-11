@@ -12,7 +12,7 @@ public class TwoDimArraysCycles {
             }
         }
 
-        MatrixUtils.printArray(outerArray);
+        MatrixUtils.printMatrix(outerArray);
         System.out.println("Hello!");
     }
 }

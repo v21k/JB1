@@ -13,7 +13,7 @@ public class Task1 {
         int columns = sc.nextInt();
 
         int[][] matrix = MatrixUtils.generateMatrix(rows, columns, 100);
-        MatrixUtils.printArray(matrix);
+        MatrixUtils.printMatrix(matrix);
 
         for (int i = 0; i < matrix.length; i++) {
             int[] innerArray = matrix[i];
@@ -28,6 +28,6 @@ public class Task1 {
         }
 
         System.out.println("Loading...");
-        MatrixUtils.printArray(matrix);
+        MatrixUtils.printMatrix(matrix);
     }
 }

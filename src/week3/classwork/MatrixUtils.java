@@ -21,7 +21,7 @@ public class MatrixUtils {
         return resultArray;
     }
 
-    public static void printArray(int[][] array) {
+    public static void printMatrix(int[][] array) {
         for (int i = 0; i < array.length; i++) {
             int[] innerArray = array[i];
 
