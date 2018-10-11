@@ -4,7 +4,17 @@ import week3.classwork.MatrixUtils;
 
 public class Task5 {
     public static void main(String[] args) {
-        int[][] matrix = MatrixUtils.generateMatrix(5, 8, 10);
+        int[][] matrix1 = MatrixUtils.generateMatrix(5, 8, 10);
+        swapRows(matrix1);
+
+        System.out.println();
+
+        int[][] matrix2 = MatrixUtils.generateMatrix(5, 8, 10);
+        swapColumns(matrix2);
+    }
+
+    private static void swapColumns(int[][] matrix) {
+        System.out.println("Before columns swap");
         MatrixUtils.printMatrix(matrix);
 
         int maxColumnSum = 0;
@@ -12,7 +22,7 @@ public class Task5 {
         int maxColumnIndex = 0;
         int minColumnIndex = 0;
 
-        for (int i = 0; i < matrix.length; i++) {
+        for (int i = 0; i < matrix[0].length; i++) {
             int sum = 0;
             for (int j = 0; j < matrix.length; j++) {
                 sum += matrix[j][i];
@@ -27,9 +37,23 @@ public class Task5 {
                 minColumnIndex = i;
             }
         }
+
+
+        for (int i = 0; i < matrix.length; i++) {
+            int temp = matrix[i][minColumnIndex];
+            matrix[i][minColumnIndex] = matrix[i][maxColumnIndex];
+            matrix[i][maxColumnIndex] = temp;
+        }
+
+        System.out.printf("maxIndex %d, minIndex %d%n", maxColumnIndex, minColumnIndex);
+        System.out.println("After columns swap:");
+        MatrixUtils.printMatrix(matrix);
     }
 
     private static void swapRows(int[][] matrix) {
+        System.out.println("Before rows swap");
+        MatrixUtils.printMatrix(matrix);
+
         int maxRowSum = 0;
         int minRowSum = Integer.MAX_VALUE;
         int maxRowIndex = 0;
@@ -54,7 +78,8 @@ public class Task5 {
         matrix[minRowIndex] = matrix[maxRowIndex];
         matrix[maxRowIndex] = tempRow;
 
-        System.out.println("After swap:");
+        System.out.printf("maxIndex %d, minIndex %d%n", maxRowIndex, minRowIndex);
+        System.out.println("After rows swap:");
         MatrixUtils.printMatrix(matrix);
     }
 }
